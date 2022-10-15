@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/veg-recipes/static/css/main.073c9b0a.css",
+    "main.js": "/veg-recipes/static/js/main.b7db4609.js",
+    "static/js/787.a24c743e.chunk.js": "/veg-recipes/static/js/787.a24c743e.chunk.js",
+    "static/media/logo.svg": "/veg-recipes/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/veg-recipes/index.html",
+    "main.073c9b0a.css.map": "/veg-recipes/static/css/main.073c9b0a.css.map",
+    "main.b7db4609.js.map": "/veg-recipes/static/js/main.b7db4609.js.map",
+    "787.a24c743e.chunk.js.map": "/veg-recipes/static/js/787.a24c743e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.b7db4609.js"
+  ]
+}
