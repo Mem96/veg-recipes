@@ -1,0 +1,7 @@
+.header-container {
+    padding: '20px';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to left, #84208088, 80%, #69f06966)
+}
