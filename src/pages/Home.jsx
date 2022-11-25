@@ -1,37 +1,59 @@
-import './Home.css';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import EmptyResults from '../components/EmptyResults';
 import RecipeCard from '../components/RecipeCard';
+import ScrollingButtons from '../components/ScrollingButtons';
 import SearchBar from '../components/SearchBar';
+import useGetRecipes from '../hooks/useGetRecipes';
+import './Home.css';
+import Loading from '../components/Loading';
 
-function Home() {
-  const [recipes, setRecipes] = useState([])
-  const [searchCriteria, setSearchCriteria] = useState([])
+function Home({}) {
+  const [searchCriteria, setSearchCriteria] = useState({
+    page: 0,
+    searchedWords: '',
+  })
+  const {recipes, maxResults, areResultsLoading} = useGetRecipes(searchCriteria);
+  
+  
+  function changeSearchedWords(words) {
+    setSearchCriteria(prev => ({...prev, page: 0, searchedWords: words}))
+  }
 
-  let apiKey = 'b31d5067b03a40718ae2bc354343cd66'
-  useEffect(()=>{
-    //setRecipes([mockState])
 
-    let url = `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&number=10&instructionsRequired=true&addRecipeInformation=true&apiKey=${apiKey}`
-    axios.get(url, {
-      headers: {
-        'authorization': 'b31d5067b03a40718ae2bc354343cd66',
-        'Content-Type': 'application/json'
-      }}).then(res => {setRecipes(res.data.results);})
-  }, [])
+  function handlePreviousPage(){
+      setSearchCriteria(prev => ({...prev, page: prev.page-=1}))
+      window.scrollTo(0, 0);    
+  }
+  function handleNextPage(){
+      setSearchCriteria(prev => ({...prev, page: prev.page+=1}))
+      window.scrollTo(0, 0);
+  }
+
+  
+
+
   return (
     <div className="App">
-    
-      {/* <SearchBar /> */}
+      <SearchBar handleResearch={(words) => changeSearchedWords(words)}/>
       
-      {recipes.map(recipe =>{
+    
+      <ScrollingButtons handleNextPage={handleNextPage} handlePreviousPage={handlePreviousPage} currentPage={searchCriteria.page} maxResults={maxResults} />
+
+      {areResultsLoading && <Loading />}
+      {recipes.length > 0 && recipes.map(recipe =>{
         return (
           <div key={recipe.id}>
-            <RecipeCard recipe={recipe}/>
+            <RecipeCard recipe={recipe} id={recipe.id}/>
           </div>
 
-)
-})}
+        )
+      })}
+      {recipes.length === 0 && !areResultsLoading && (
+        <EmptyResults />
+      )}
+      
+      <ScrollingButtons handleNextPage={handleNextPage} handlePreviousPage={handlePreviousPage} currentPage={searchCriteria.page} maxResults={maxResults}/>
+
     </div>
 
   );

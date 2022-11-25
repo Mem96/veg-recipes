@@ -1,11 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Source Serif Pro', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2 {
+  font-family: 'Sacramento', cursive;
+  font-weight: bold;
+  font-size: 64px;
 }
+
+h2 {
+  font-size: 42px;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

@@ -1,7 +1,15 @@
 .header-container {
-    padding: '20px';
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to left, #84208088, 80%, #69f06966)
+    background: linear-gradient(to left, #43AA8B 10%, #254441 60%, #43AA8B);
+    border-radius: 0 0 15px 15px;
+    position: relative;
+    z-index: 3;
+    color: #E4E4DC;
+}
+
+.header-title {
+    margin: 0;
 }

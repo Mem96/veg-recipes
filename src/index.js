@@ -10,10 +10,11 @@ export default function App() {
   return(
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}>
-          {/* <Route index element={<Home/>} /> */}
-          <Route path="/recipe/:id" element={<RecipePage />} />
+        <Route path='/veg-recipes' element={<PageHeader />}>
+          <Route index element={<Home/>} />
+          <Route path="recipe/:id" element={<RecipePage />} />
         </Route>
+          
       </Routes>
     </BrowserRouter>
   )
@@ -22,11 +23,8 @@ export default function App() {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <PageHeader/>
+    <App />
 
-    <Home />
-  </React.StrictMode>
 );
 
 
