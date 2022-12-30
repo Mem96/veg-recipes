@@ -1,39 +1,43 @@
 .searchbar-container {
-    padding: 10px;
-    padding-top: 20px;
-    margin-top: -10px;
-    background-color: #EDD2E0;
+  padding: 10px;
+  padding-top: 20px;
+  margin-top: -10px;
+  background-color: #edd2e0;
 }
 
-.searchbar-input{
-    font-size: 18px;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-family: 'Source Serif Pro';
-    border: 2px solid #E4E4DC;
-    position: relative;
-    z-index: 3;
+.searchbar-input {
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-family: "Source Serif Pro";
+  border: 2px solid #e4e4dc;
+  position: relative;
+  z-index: 3;
 }
 
-.searchbar-btn{
-    background-color: #43AA8B;
-    border: 2px solid #E4E4DC;
-    padding: 6px 15px 6px 30px;
-    margin-left: -20px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    position: relative;
-    cursor: pointer;
+.searchbar-btn {
+  background-color: #43aa8b;
+  border: 2px solid #e4e4dc;
+  padding: 6px 15px 6px 30px;
+  margin-left: -20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: relative;
+  cursor: pointer;
 }
 
-.searchbar-btn:hover{
-    background-color: #7CCBB3;
+.searchbar-btn:hover {
+  background-color: #7ccbb3;
 }
 
-.cancel-btn{
-    z-index: 1;
+.cancel-btn {
+  z-index: 1;
 }
 
-.search-btn{
-    z-index: 2;
+.search-btn {
+  z-index: 2;
+}
+
+.hidden {
+  display: none;
 }
